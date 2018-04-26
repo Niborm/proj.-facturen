@@ -23,11 +23,22 @@ if(isset($_POST['inloggen'])) {
 
 ?>
 
-<form method="post">
-<label> for="username">Gebruikersnaam</label>
-<input type="text" name="username" placeholder="Gebruikersnaam..">
+<form method="post" action"">
+      <label>Username</label>
+      <input type="text" name="username" /><br/>
 
-<label> for="Password">Wachtwoord</label>
-<input type="text" name"password" placeholder="Wachtwoord..">
+      <label>Password</label>
+      <input type="password" name="password"/><br/>
 
-<input type="submit" name="login" value="Inloggen" >
+      <input type="submit" name="inloggen" value="Inloggen"/>
+</form>
+<style type="text/css">
+        label {
+          float: left;
+          display: block;
+          width: 90px;
+        }
+        .verzenden {
+          margin-left: 150px;
+        }
+    </style>
