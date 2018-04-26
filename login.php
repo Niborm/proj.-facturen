@@ -8,12 +8,13 @@ if(isset($_POST['inloggen'])) {
   $username = $_POST['username'];
   $password = md5($_POST['password']);
 
-  $query = "SELECT * FROM gebruikers WHERE username = '" . $username . "' AND password = '" . $password . "'";
+  $query = "SELECT * FROM login WHERE username = '" . $username . "' AND password = '" . $password . "'";
   $result = mysqli_query($con, $query);
 
   if(mysqli_num_rows($result) == 1) {
-    header('Location: admin.php');
+    header('Location: index.php');
     $_SESSION['login'] = true;
+    $_SESSION['admin'] = true;
   } else {
     echo "Onjuiste gegevens!<br/>";
   }

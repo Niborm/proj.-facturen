@@ -1,6 +1,10 @@
 <?php
 session_start();
-
+if($_SESSION['login'] == true && $_SESSION['admin'] != false){
+  echo " ";
+}else{
+  header('Location: login.php');
+}
 $con = mysqli_connect("localhost", "root", "usbw");
        mysqli_select_db($con, "facturen");
 
@@ -115,4 +119,4 @@ $con = mysqli_connect("localhost", "root", "usbw");
      <input type="submit" name="verzenden" value="Opslaan"/>
  </form>
 
- <a href="admin.php">Terug naar admin pagina</a>
+ <a href="index.php">Terug naar het overzicht</a>
